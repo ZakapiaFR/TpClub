@@ -12,9 +12,13 @@
         "symfony/flex": "^2",
         "symfony/framework-bundle": "7.4.*",
         "symfony/runtime": "7.4.*",
+        "symfony/twig-bundle": "7.4.*",
         "symfony/yaml": "7.4.*"
     },
     "require-dev": {
+        "symfony/maker-bundle": "^1.68",
+        "symfony/stopwatch": "7.4.*",
+        "symfony/web-profiler-bundle": "7.4.*"
     },
     "config": {
         "allow-plugins": {
