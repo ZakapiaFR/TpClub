@@ -15,4 +15,11 @@ final class ClubController extends AbstractController
             'controller_name' => 'ClubController',
         ]);
     }
+    #[Route('/club/{id}/{nom}', name: 'app_club_testParam' , requirements: ['id' => '[0-9]{2,6}','nom' =>'[a-zA-Z ]{3,25}'])]
+    public function testParam(int $id, string $nom): Response{
+        return $this->render('club/testParam.html.twig', [
+            'id' => $id,
+            'nom' => $nom,
+        ]);
+    }
 }
