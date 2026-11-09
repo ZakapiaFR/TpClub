@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello TestTwig{% endblock %}
+
+{% block body %}
+
+    <h1> {{ titre | title }}</h1>
+    <ul>
+        {% for user in users %}
+            <li>{{ user.nom }} a {{ user.age }} ans donc cette personne est 
+                {% if user.age > 18 %}
+                    <strong>majeure</strong>
+                {% elseif user.age < 10 %}
+                    <strong>un enfant</strong>
+                {% else %}
+                    <strong>mineure</strong>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Année bissextile{% endblock %}
+
+{% block body %}
+
+    <h1>Année bissextile</h1>
+    <p>{{ nb }} + {{ anneeCourante }} = {{ annee }}</p>
+    
+    {# Affichage conditionnel selon le booléen du contrôleur #}
+    {% if estBissextile %}
+        <p>L'année {{ annee }} est bissextile.</p>
+    {% else %}
+        <p>L'année {{ annee }} n'est pas bissextile.</p>
+    {% endif %}
+{% endblock %}
