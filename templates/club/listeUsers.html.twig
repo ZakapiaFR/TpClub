@@ -1,0 +1,26 @@
+<div class="row row-cols-1 row-cols-md-4 g-3">
+        {% for user in users %}
+            <div class="col">
+                <div class="card h-100">
+                    <img src="{{ user.image }}" class="card-img-top" alt="Photo de {{ user.nom }}">
+                    <div class="card-body">
+                        <h6 class="card-title">{{ user.nom }}</h6>
+                        <p class="card-text small mb-1">
+                            Cette personne a {{ user.age }} ans donc elle est
+                            {% if user.age >= 18 %}
+                                <strong>majeure</strong>
+                            {% elseif user.age >= 10 %}
+                                <strong>mineure</strong>
+                            {% else %}
+                                un <strong>enfant</strong>
+                            {% endif %}
+                        </p>
+                        <p class="card-text small text-muted">
+                            Elle a été enregistrée le {{ user.createdAt|date('d/m/Y') }}
+                        </p>
+                        <a href="#" class="btn btn-primary btn-sm">Détails</a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>

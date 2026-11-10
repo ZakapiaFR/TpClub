@@ -26,6 +26,16 @@ final class TestTwigController extends AbstractController
         $users[] = $user;
         $user = ['nom' => 'Allen', 'age' => 34];
         $users[] = $user;
+
+        // Ajout d'une image aléatoire et d'une date de création aléatoire à chaque user
+        foreach ($users as &$user) {
+            $user['image'] = 'https://i.pravatar.cc/300?img=' . rand(1, 70);
+            $user['createdAt'] = rand(2010, 2024) . '-'
+                . str_pad(rand(1, 12), 2, '0', STR_PAD_LEFT) . '-'
+                . str_pad(rand(1, 28), 2, '0', STR_PAD_LEFT);
+        }
+        unset($user); // important après un foreach par référence
+        
         return $this->render('club/testtwig.html.twig', [
             'titre' => 'page accueil',
             'users' => $users
